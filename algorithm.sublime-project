@@ -1,0 +1,60 @@
+
+{
+    "folders":
+    [
+        {
+            // 填你项目文件的完整地址
+            "path": "/Users/macos/desktop/Algorithm",  
+
+            "file_exclude_patterns": ["*.exec","*.md","*.pdf","*.doc"],
+
+            // 还是这样好，直接只包含cpp和txt文件就行了
+            "file_include_patterns": ["*.cpp","*.txt"]
+        }
+    ]
+}
+
+/* 使用说明
+
+{
+"folders":
+[
+{
+"path": "src",
+"folder_exclude_patterns": ["backup"]
+},
+{
+"path": "docs",
+"name": "Documentation",
+"file_exclude_patterns": ["*.css"]
+}
+],
+"settings":
+{
+"tab_size": 8
+},
+"build_systems":
+[
+{
+"name": "List",
+"cmd": ["ls"]
+}
+]
+}
+
+
+
+folders：包含的文件夹。
+
+path 必须，相对于项目的相对路径，或是绝对路径。
+
+name 可选，如果存在，则会出现在侧边栏。
+
+folder_exclude_patterns 可选，通配符组成的列表，匹配到的文件夹会被排除在项目外。
+
+folder_include_patterns 可选，通配符组成的列表，匹配到的文件夹会被包含在项目中。
+
+file_exclude_patterns 可选，通配符组成的列表，匹配到的文件会被排除在项目外。
+
+file_include_patterns 可选，通配符组成的列表，匹配到的文件会被包含在项目中。
+*/
