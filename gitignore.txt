@@ -1,4 +1,4 @@
 *.exe
 .setting
 Local
-new2.txt
+new.txt
