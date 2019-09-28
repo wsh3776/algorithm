@@ -2,3 +2,5 @@
 .setting
 Local
 new.txt
+algorithm.sublime-workspace
+algorithm.sublime-project
