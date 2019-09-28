@@ -1,6 +1,4 @@
 *.exe
-.setting
-Local
 new.txt
-.sublime-workspace
-.sublime-project
+*.sublime-workspace
+*.sublime-project
