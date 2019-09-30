@@ -6,3 +6,23 @@
  -->
 # Algorithm
 Be happy in the kingdom of algorithm.
+
+- cpp模版
+
+```cpp
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    #ifdef ONLINE_JUDGE
+    #else
+    freopen("in.txt", "r", stdin);
+    #endif
+    
+    cout << "Hello My Friend" << endl;
+
+    return 0;
+}
+
+```
