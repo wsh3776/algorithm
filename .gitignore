@@ -4,3 +4,13 @@ new.txt
 *.sublime-workspace
 *.sublime-project
 Local
+
+// 删除exec的方法
+# Ignore all
+*
+
+# Unignore all with extensions
+!*.*
+
+# Unignore all dirs
+!*/
