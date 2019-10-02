@@ -1,3 +1,4 @@
+*.exec
 *.exe
 new.txt
 *.sublime-workspace
