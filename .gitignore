@@ -5,7 +5,9 @@ new.txt
 *.sublime-project
 Local
 
-// 删除exec的方法
+.DS_Store
+
+# 删除exec的方法
 # Ignore all
 *
 
