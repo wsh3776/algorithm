@@ -1,2 +1,15 @@
 Local
+
+# 根目录下的.gitignore_global我也设置了.DS_Store
 .DS_Store
+
+# Ignore all
+*
+
+# Unignore all with extensions
+!*.cpp
+!*.txt
+!*.md
+
+# Unignore all dirs
+!*/
