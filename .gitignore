@@ -12,5 +12,6 @@ Local
 !*.md
 
 # Unignore all dirs
-!*/
+!/Algorithm/
+!/Algorithm/**/
 
