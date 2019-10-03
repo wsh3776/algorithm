@@ -21,7 +21,7 @@
 // case #2:
 // 13
 
-#include <bits/stdc++.h>
+#include <iostream>
 
 using namespace std;
 
