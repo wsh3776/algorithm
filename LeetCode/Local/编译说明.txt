@@ -1,0 +1,27 @@
+1.cpp文件或文件夹命名一律不能含空格，否则编译运行会出现不是内部命令提示。
+
+2.所有文件题目以cpp命名，统一用一个in.txt和out.txt
+  shift + 右键 竖向选择 用于选被注释的样例
+
+3.对于一些自己尝试的输入数据，可以以注释形式保存样例在cpp文件中,这样也有助于理解题目
+
+4.不需要每个题目都截图，除了那种公司笔试题，其他刷题网站的题目到时复习的时候去找题号就行了
+
+5.万能重定向适合本地和网页OJ
+	#ifdef ONLINE_JUDGE
+    #else
+        freopen("in.txt","r",stdin);
+        freopen("out.txt", "w", stdout);
+    #endif
+<<<<<<< HEAD
+=======
+
+6.sublime用终端或out都可以，vscode只用out，终端会中文乱码
+	sublime是不支持输入的，所以一定要从in.txt中读取数据
+	另外命名不能含. 或- 只能用下划线 否则会输出多余文件
+
+  sublime和vscode都不能用auto
+
+  所以sublime里注释掉//out,而vscodes不注释//
+  不要有强迫症，不要追求完美，到头来是瞎折腾，浪费时间
+>>>>>>> update9.7
