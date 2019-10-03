@@ -6,6 +6,7 @@ new.txt
 Local
 
 .DS_Store
+**/.DS_Store
 
 # 删除exec的方法
 # Ignore all
