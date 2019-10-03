@@ -1,7 +1,4 @@
-Local
-
-# 根目录下的.gitignore_global我也设置了.DS_Store
-.DS_Store
+# 在mac根目录下的.gitignore_global设置了.DS_Store其实没用，因为我局部已经定义了.DS_Store的规则
 
 # Ignore all
 *
