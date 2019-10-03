@@ -16,3 +16,6 @@ Local
 
 # Unignore all dirs
 !*/
+
+
+in.txt/
