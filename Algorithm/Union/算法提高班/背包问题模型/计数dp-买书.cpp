@@ -1,3 +1,4 @@
+// 买书——将书看作物品，书的价格看做体积，钱数看作背包容量。问题转化为完全背包求方案数
 #include <iostream>
 
 using namespace std;
