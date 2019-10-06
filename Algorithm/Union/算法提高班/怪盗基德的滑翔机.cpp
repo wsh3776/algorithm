@@ -43,7 +43,7 @@ int main() {
     return 0;
 }
 
-// yxc 求所有a[i]的最大值时可以直接在第二重循环中做
+// yxc and me 求所有a[i]的最大值时可以直接在第二重循环中做
 #include <iostream>
 #include <algorithm>
 
@@ -57,6 +57,7 @@ int a[N], f[N];
 int main() {
     int T;
     scanf("%d", &T);
+    
     while (T -- ) {
         scanf("%d", &n);
         for (int i = 1; i <= n; i ++ ) scanf("%d", &a[i]);
