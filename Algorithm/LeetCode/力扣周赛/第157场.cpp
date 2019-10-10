@@ -1,5 +1,5 @@
 /*
-	2019年10月6日 星期日 
+	2019年10月6日 星期日
 	AC: 1/4
 	第一题看起来很难，但看别人2分钟就做出来了，仔细想了下不难
 	第二题跟最长公共上升子序列有点像，但超时了，因为n = 100010;
@@ -60,16 +60,16 @@ public:
 class Solution {
 public:
     map<int, int> dp;
-    int longestSubsequence(vector<int>& arr, int difference) {
+    int longestSubsequence(vector<int> &arr, int difference) {
         dp.clear();
 
-        int ans=0;
-        for (auto v: arr){
-            int nv=max(dp[v], dp[v-difference]+1);
-            ans=max(ans, nv);
-            dp[v]=nv;
+        int ans = 0;
+        for (auto v : arr) {
+            int nv = max(dp[v], dp[v - difference] + 1);
+            ans = max(ans, nv);
+            dp[v] = nv;
         }
-        
+
         return ans;
     }
 };
@@ -136,35 +136,37 @@ public:
     }
 };
 
-///* 
-int dx[4]={0, 1, 0, -1};
-int dy[4]={1, 0, -1, 0};
+///*
+int dx[4] = {0, 1, 0, -1};
+int dy[4] = {1, 0, -1, 0};
 
 class Solution {
 public:
-    int ans=0;
+    int ans = 0;
     int gold[20][20], n, m;
-    
-    
-    void dfs(int x, int y, int cur){
-        int rev=gold[x][y]; gold[x][y]=0;
-        cur+=rev; ans=max(ans, cur);
-        
-        for (int k=0; k<4; k++){
-            int tx=x+dx[k], ty=y+dy[k];
-            if (0<=tx && tx<n && 0<=ty && ty<m && gold[tx][ty]>0) dfs(tx, ty, cur);
+
+
+    void dfs(int x, int y, int cur) {
+        int rev = gold[x][y];
+        gold[x][y] = 0;
+        cur += rev;
+        ans = max(ans, cur);
+
+        for (int k = 0; k < 4; k++) {
+            int tx = x + dx[k], ty = y + dy[k];
+            if (0 <= tx && tx < n && 0 <= ty && ty < m && gold[tx][ty] > 0) dfs(tx, ty, cur);
         }
-        
-        gold[x][y]=rev;
+
+        gold[x][y] = rev;
     }
-    
-    int getMaximumGold(vector<vector<int>>& grid) {
+
+    int getMaximumGold(vector<vector<int>> &grid) {
         n = grid.size();
         m = grid[0].size();
-        for (int i=0; i<n; i++) for (int j=0; j<m; j++) gold[i][j]=grid[i][j];
-        
-        ans=0;
-        for (int i=0; i<n; i++) for (int j=0; j<m; j++) if (gold[i][j]>0) dfs(i, j, 0);
+        for (int i = 0; i < n; i++) for (int j = 0; j < m; j++) gold[i][j] = grid[i][j];
+
+        ans = 0;
+        for (int i = 0; i < n; i++) for (int j = 0; j < m; j++) if (gold[i][j] > 0) dfs(i, j, 0);
         return ans;
     }
 };
@@ -178,26 +180,29 @@ public:
 };
 
 
+
+
 ///* 5216
-const long long MOD=1e9+7;
+const long long MOD = 1e9 + 7;
 // a, e, i, o, u
 // 0, 1, 2, 3, 4
 class Solution {
 public:
     long long dp[5], f[5];
     int countVowelPermutation(int n) {
-        --n; for (int i=0; i<5; i++) dp[i]=1;
-        for (int _=0; _<n; ++_){
+        --n;
+        for (int i = 0; i < 5; i++) dp[i] = 1;
+        for (int _ = 0; _ < n; ++_) {
             memset(f, 0, sizeof(f));
-            f[0]=(dp[1]+dp[2]+dp[4])%MOD;
-            f[1]=(dp[0]+dp[2])%MOD;
-            f[2]=(dp[1]+dp[3])%MOD;
-            f[3]=(dp[2])%MOD;
-            f[4]=(dp[2]+dp[3])%MOD;
-            for (int i=0; i<5; i++) dp[i]=f[i];
+            f[0] = (dp[1] + dp[2] + dp[4]) % MOD;
+            f[1] = (dp[0] + dp[2]) % MOD;
+            f[2] = (dp[1] + dp[3]) % MOD;
+            f[3] = (dp[2]) % MOD;
+            f[4] = (dp[2] + dp[3]) % MOD;
+            for (int i = 0; i < 5; i++) dp[i] = f[i];
         }
-        long long ans=0;
-        for (int i=0; i<5; i++) ans=(ans+dp[i])%MOD;
+        long long ans = 0;
+        for (int i = 0; i < 5; i++) ans = (ans + dp[i]) % MOD;
         return ans;
     }
 };

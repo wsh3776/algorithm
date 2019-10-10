@@ -57,10 +57,12 @@ int a[N], f[N];
 int main() {
     int T;
     scanf("%d", &T);
-    
+
     while (T -- ) {
         scanf("%d", &n);
         for (int i = 1; i <= n; i ++ ) scanf("%d", &a[i]);
+
+
 
         // 正向求解LIS问题
         int res = 0;
