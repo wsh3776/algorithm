@@ -11,6 +11,7 @@
 !*.pdf
 !*.zip
 !*.html
+!*.docx
 
 # Unignore all dirs
 !/Algorithm/
