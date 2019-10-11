@@ -10,10 +10,14 @@
 !*.png
 !*.pdf
 !*.zip
+!*.jpeg
 !*.html
 !*.docx
 
-# Unignore all dirs
+# Unigore all dirs
+# !*/
+
+# Unignore specific dirs 
 !/Algorithm/
 !/Algorithm/**/
 

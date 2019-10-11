@@ -26,25 +26,29 @@ int n;
 PII q[N];
 int f[N];
 
-int main()
-{
+int main() {
+    #ifdef ONLINE_JUDGE
+    #else
+    freopen("in.txt","r",stdin);
+    #endif
+    
+    
     scanf("%d", &n);
     for (int i = 0; i < n; i ++ ) scanf("%d%d", &q[i].first, &q[i].second);
     sort(q, q + n);
-    
+
     int res = 0;
-    for (int i = 0; i < n; i ++ )
-    {
+    for (int i = 0; i < n; i ++ ) {
         f[i] = 1;
         for (int j = 0; j < i; j ++ )
             if (q[i].second > q[j].second)
                 f[i] = max(f[i], f[j] + 1);
-        
+
         res = max(res, f[i]);
     }
-    
+
     printf("%d\n", res);
-    
+
     return 0;
 }
 
@@ -67,12 +71,12 @@ int main() {
         cin >> a[i].w >> a[i].s;
 
     sort(a + 1, a + n + 1, lxl);
-    
+
     for(int i = 1; i <= n; i++)
         for(int j = i - 1; j >= 0; j--)
             if(j == 0 || a[j].s < a[i].s)
                 f[i] = max(f[i], f[j] + 1);
-    
+
     for(int i = 1; i <= n; i++)
         t = max(t, f[i]);
     cout << t << endl;
