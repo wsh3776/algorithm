@@ -22,6 +22,7 @@
 // 13
 
 #include <iostream>
+#include <math.h>
 
 using namespace std;
 
@@ -33,9 +34,10 @@ int main(void)
 #ifdef ONLINE_JUDGE
 #else
     freopen("in.txt", "r", stdin);
-    freopen("out.txt", "w", stdout);
+   // freopen("out.txt", "w", stdout);
 #endif
 
+    cout << ceil(1.3) << endl;
     int T;
     cin >> T;
     for (int cnt = 0; cnt < T; cnt ++)
