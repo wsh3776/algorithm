@@ -1,0 +1,91 @@
+%!TEX program = xelatex 
+\documentclass{article} 
+\usepackage{xunicode, xltxtra, ctex, amsmath, amsthm} 
+
+\title{Math Type} 
+\author{Wilson79} 
+\date{\today}
+
+\begin{document} 
+	\tableofcontents % 产生文档目录
+	\maketitle %{第一章} 
+
+	\section{行内公式} %小节
+
+	我们来看公式$a+b=2$ % 行内公式 $$ 或 \( \) 或 \begin{math} \end{math}
+
+    \section{行间公式}
+
+	\[a^2 = b ^2 + c^2 \] % 行间公式
+	$$a^2 = b ^2 + c^2$$
+	\begin{displaymath}
+	a^2 = b ^2 + c^2
+	\end{displaymath}
+
+	\section{自动编号公式equation}
+	\begin{equation} % 需要amsmath宏包
+	 c^2 = b ^2 + d^2 
+	\end{equation}
+
+	% 交叉引用
+	详见公式\ref{eq:a}
+	\begin{equation} 
+	c^2 = b ^2 + d^2 \label{eq:a}
+	\end{equation}
+
+	\begin{equation} 
+	 c^2 = b ^2 + d^2 \tag{*} 
+	\end{equation}
+
+	\section{不自动编号公式equation*}	
+	\begin{equation}
+	d^2 = a ^2 + c^2 \notag
+	\end{equation}
+	
+	\begin{equation*}
+	d^2 = a ^2 + c^2 
+	\end{equation*}
+
+	\section{定理环境}
+	% 宏包amsthm
+	\begin{proof}
+	For simplicity, we use
+	\[
+	E=mc^2
+	\]
+	That's it.
+	\end{proof}
+
+	\section{上标下标}
+	$$3x^{x_{20} + 3} - x + 2 = 0$$
+	$$\beta_0,a_1,...,a_{100}$$
+	\section{希腊字母} 
+	$\alpha$
+	$\pi$
+	$\beta$
+	$\gamma$
+
+	$\beta^2 = 16$
+
+	\section{数学函数}
+	$\log$
+	$\sin$
+	$\arccos x$
+	$\ln x$
+
+	$\sin^2 x+\cos^2 x = 1$
+	$\log_2 x$
+
+	$\sqrt{x ^ 2 + y ^ 2}$
+	$\sqrt{2 + \sqrt[3]{9}}$ % 可选参数决定开方次数
+
+	\section{分式}
+	大约是原体积的$3/4$
+	大约是原体积的$\frac{3}{4}$
+
+	$\frac{\sqrt{x-1}}{\sqrt{x+1}}$
+
+	$\sqrt{\frac{x}{x^{11} - x + 3}}$
+
+
+\end{document}
