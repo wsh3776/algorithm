@@ -83,16 +83,84 @@
 
 	\section{分式}
 	大约是原体积的$3/4$
-大约是原体积的$\frac{3}{4}$
+	大约是原体积的$\frac{3}{4}$
 
 	$\frac{\sqrt{x-1}}{\sqrt{x+1}}$
 
 	$\sqrt{\frac{x}{x^{11} - x + 3}}$
 
 	\section{复杂公式例子}
+
 	\[
-	(25) y=\left(x-a_{1}\right)^{a_{1}}\left(x-a_{2}\right)^{a_{2}} \cdots\left(x-a_{n}\right)^{a_{n}}
+	(25)\quad y=\left(x-a_{1}\right)^{a_{1}}\left(x-a_{2}\right)^{a_{2}} \cdots\left(x-a_{n}\right)^{a_{n}}
 	\]
+
+	\[
+	\lim _{x \rightarrow \infty} \frac{x^{2}-5}{x^{2}-1}=1
+	\]
+
+	$$\lim _{x \ddots \infty} {f(x)+ 2} = 1$$
+
+	% \left \right 定界符 保证你的括号大小也会随公式去变化
+	\[1 + \left(\frac{1}{1-x^{2}}
+	\right)^3 \qquad
+	\left.\frac{\partial f}{\partial t}
+	\right|_{t=0}\]
+
+
+	${a,b,c}\neq \{a,b,c\}$
+
+	\section{多行公式}
+	% 目前最常用的是 align 环境，它将公式用 & 隔为两部分并对齐。分隔符通常放在等号左边
+	% align默认会加上编号，用notag去掉
+	\begin{align} 
+	a & = b + c \notag \\ 
+	&=d+e 
+	\end{align}
+	
+	% aligned可以不加编号
+	\[
+	\begin{aligned} 
+	a+b+c+d+& e+f+g+h+i \\
+	=& j+k+l+m+n \\
+	=& o+p+q+r+s \\ 
+	=& t+u+v+x+z \end{aligned}
+	\]
+	\section{矩阵}
+	% array环境（类似于表格环境tabular）
+	\[
+	a + b \\ + c\quad % \\行间公式不能换行
+	\begin{array}{l | l}
+	{1} & {2} \\ 
+	\hline
+	{3} & {4}
+	\end{array} 
+	\left[\begin{array}{cccc}
+	{x_{11}} & {x_{12}} & {\dots} & {x_{1 n}} \\ 
+	{x_{21}} & {x_{22}} & {\dots} & {x_{2 n}} \\ 
+	{\vdots} & {\vdots} & {\ddots} & {\vdots} \\ 
+	{x_{n 1}} & {x_{n 2}} & {\dots} & {x_{n n}}
+	\end{array}\right]
+	\]
+
+	% 带下标的矩阵
+	\[
+	A = \begin{bmatrix}
+		a_{11} & \dots & \text{\Large5}\\ % \text在数学模式下临时切换为文本模式
+		& \ddots  & \vdots \\ % 没有反斜省略号
+		1 &  & 2	
+	\end{bmatrix}_{n \times n} % \times表示×
+	\]
+
+	% 行内小矩阵（smallmatrix）
+	复数$z = (x, y)$也可用矩阵 
+	\begin{math}
+	\left(\begin{smallmatrix}
+	x & -y \\
+	y & x	
+	\end{smallmatrix}\right) % 定界符加在)左边
+	\end{math}
+
 
 
 \end{document}
