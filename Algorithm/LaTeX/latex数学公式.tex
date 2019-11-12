@@ -1,6 +1,6 @@
-%!TEX program = xelatex 
 \documentclass{article} 
-\usepackage{xunicode, xltxtra, ctex, amsmath, amsthm} 
+\usepackage{xunicode, xltxtra, lmodern, ctex, amsmath} 
+\usepackage{amsthm}
 
 \title{Math Type} 
 \author{Wilson79} 
@@ -9,7 +9,9 @@
 \begin{document} 
 	\tableofcontents % 产生文档目录
 	\maketitle %{第一章} 
-
+	
+	$f(x)=\frac{1}{\sqrt{2 \pi \sigma x}} e^{-\frac{(x-\mu)^{2}}{2 \sigma^{2}}}$
+	
 	\section{行内公式} %小节
 
 	我们来看公式$a+b=2$ % 行内公式 $$ 或 \( \) 或 \begin{math} \end{math}
@@ -81,11 +83,16 @@
 
 	\section{分式}
 	大约是原体积的$3/4$
-	大约是原体积的$\frac{3}{4}$
+大约是原体积的$\frac{3}{4}$
 
 	$\frac{\sqrt{x-1}}{\sqrt{x+1}}$
 
 	$\sqrt{\frac{x}{x^{11} - x + 3}}$
+
+	\section{复杂公式例子}
+	\[
+	(25) y=\left(x-a_{1}\right)^{a_{1}}\left(x-a_{2}\right)^{a_{2}} \cdots\left(x-a_{n}\right)^{a_{n}}
+	\]
 
 
 \end{document}
