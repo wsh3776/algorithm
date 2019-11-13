@@ -1,166 +1,210 @@
 \documentclass{article} 
-\usepackage{xunicode, xltxtra, lmodern, ctex, amsmath} 
-\usepackage{amsthm}
+\usepackage{xunicode, xltxtra, lmodern, ctex} 
+\usepackage{amsthm, amssymb, amsmath}
 
 \title{Math Type} 
 \author{Wilson79} 
 \date{\today}
 
 \begin{document} 
-	\tableofcontents % 产生文档目录
-	\maketitle %{第一章} 
-	
-	$f(x)=\frac{1}{\sqrt{2 \pi \sigma x}} e^{-\frac{(x-\mu)^{2}}{2 \sigma^{2}}}$
-	
-	\section{行内公式} %小节
+    \tableofcontents % 产生文档目录
+    \maketitle %{第一章} 
+    
+    $f(x)=\frac{1}{\sqrt{2 \pi \sigma x}} e^{-\frac{(x-\mu)^{2}}{2 \sigma^{2}}}$
+    
+\section{行内公式} %小节
+    我们来看公式$a+b=2$ % 行内公式 $$ 或 \( \) 或 \begin{math} \end{math}
 
-	我们来看公式$a+b=2$ % 行内公式 $$ 或 \( \) 或 \begin{math} \end{math}
+\section{行间公式}
+    \[a^2 = b ^2 + c^2 \] % 行间公式
+    $$a^2 = b ^2 + c^2$$
+    \begin{displaymath}
+    a^2 = b ^2 + c^2
+    \end{displaymath}
 
-    \section{行间公式}
+\section{自动编号公式equation}
+    \begin{equation} % 需要amsmath宏包
+     c^2 = b ^2 + d^2 
+    \end{equation}
 
-	\[a^2 = b ^2 + c^2 \] % 行间公式
-	$$a^2 = b ^2 + c^2$$
-	\begin{displaymath}
-	a^2 = b ^2 + c^2
-	\end{displaymath}
+    % 交叉引用
+    详见公式\ref{eq:a}
+    \begin{equation} 
+    c^2 = b ^2 + d^2 \label{eq:a}
+    \end{equation}
 
-	\section{自动编号公式equation}
-	\begin{equation} % 需要amsmath宏包
-	 c^2 = b ^2 + d^2 
-	\end{equation}
+    \begin{equation} 
+     c^2 = b ^2 + d^2 \tag{*} 
+    \end{equation}
 
-	% 交叉引用
-	详见公式\ref{eq:a}
-	\begin{equation} 
-	c^2 = b ^2 + d^2 \label{eq:a}
-	\end{equation}
+\section{不自动编号公式equation*}  
+    \begin{equation}
+    d^2 = a ^2 + c^2 \notag
+    \end{equation}
+    
+    \begin{equation*}
+    d^2 = a ^2 + c^2 
+    \end{equation*}
 
-	\begin{equation} 
-	 c^2 = b ^2 + d^2 \tag{*} 
-	\end{equation}
+\section{定理环境}
+    % 宏包amsthm
+    \begin{proof}
+    For simplicity, we use
+    \[
+    E=mc^2
+    \]
+    That's it.
+    \end{proof}
 
-	\section{不自动编号公式equation*}	
-	\begin{equation}
-	d^2 = a ^2 + c^2 \notag
-	\end{equation}
-	
-	\begin{equation*}
-	d^2 = a ^2 + c^2 
-	\end{equation*}
+\section{上标下标}
+    $$3x^{x_{20} + 3} - x + 2 = 0$$
+    $$\beta_0,a_1,...,a_{100}$$
 
-	\section{定理环境}
-	% 宏包amsthm
-	\begin{proof}
-	For simplicity, we use
-	\[
-	E=mc^2
-	\]
-	That's it.
-	\end{proof}
+\section{希腊字母} 
+    $\alpha$
+    $\pi$
+    $\beta$
+    $\gamma$
 
-	\section{上标下标}
-	$$3x^{x_{20} + 3} - x + 2 = 0$$
-	$$\beta_0,a_1,...,a_{100}$$
-	\section{希腊字母} 
-	$\alpha$
-	$\pi$
-	$\beta$
-	$\gamma$
+    $\beta^2 = 16$
 
-	$\beta^2 = 16$
+\section{数学函数}
+    $\log$
+    $\sin$
+    $\arccos x$
+    $\ln x$
 
-	\section{数学函数}
-	$\log$
-	$\sin$
-	$\arccos x$
-	$\ln x$
+    $\sin^2 x+\cos^2 x = 1$
+    $\log_2 x$
 
-	$\sin^2 x+\cos^2 x = 1$
-	$\log_2 x$
+    $\sqrt{x ^ 2 + y ^ 2}$
+    $\sqrt{2 + \sqrt[3]{9}}$ % 可选参数决定开方次数
 
-	$\sqrt{x ^ 2 + y ^ 2}$
-	$\sqrt{2 + \sqrt[3]{9}}$ % 可选参数决定开方次数
+\section{分式}
+    大约是原体积的$3/4$
+    大约是原体积的$\frac{3}{4}$
 
-	\section{分式}
-	大约是原体积的$3/4$
-	大约是原体积的$\frac{3}{4}$
+    $\frac{\sqrt{x-1}}{\sqrt{x+1}}$
 
-	$\frac{\sqrt{x-1}}{\sqrt{x+1}}$
-
-	$\sqrt{\frac{x}{x^{11} - x + 3}}$
-
-	\section{复杂公式例子}
-
-	\[
-	(25)\quad y=\left(x-a_{1}\right)^{a_{1}}\left(x-a_{2}\right)^{a_{2}} \cdots\left(x-a_{n}\right)^{a_{n}}
-	\]
-
-	\[
-	\lim _{x \rightarrow \infty} \frac{x^{2}-5}{x^{2}-1}=1
-	\]
-
-	$$\lim _{x \ddots \infty} {f(x)+ 2} = 1$$
-
-	% \left \right 定界符 保证你的括号大小也会随公式去变化
-	\[1 + \left(\frac{1}{1-x^{2}}
-	\right)^3 \qquad
-	\left.\frac{\partial f}{\partial t}
-	\right|_{t=0}\]
+    $\sqrt{\frac{x}{x^{11} - x + 3}}$
 
 
-	${a,b,c}\neq \{a,b,c\}$
 
-	\section{多行公式}
-	% 目前最常用的是 align 环境，它将公式用 & 隔为两部分并对齐。分隔符通常放在等号左边
-	% align默认会加上编号，用notag去掉
-	\begin{align} 
-	a & = b + c \notag \\ 
-	&=d+e 
-	\end{align}
-	
-	% aligned可以不加编号
-	\[
-	\begin{aligned} 
-	a+b+c+d+& e+f+g+h+i \\
-	=& j+k+l+m+n \\
-	=& o+p+q+r+s \\ 
-	=& t+u+v+x+z \end{aligned}
-	\]
-	\section{矩阵}
-	% array环境（类似于表格环境tabular）
-	\[
-	a + b \\ + c\quad % \\行间公式不能换行
-	\begin{array}{l | l}
-	{1} & {2} \\ 
-	\hline
-	{3} & {4}
-	\end{array} 
-	\left[\begin{array}{cccc}
-	{x_{11}} & {x_{12}} & {\dots} & {x_{1 n}} \\ 
-	{x_{21}} & {x_{22}} & {\dots} & {x_{2 n}} \\ 
-	{\vdots} & {\vdots} & {\ddots} & {\vdots} \\ 
-	{x_{n 1}} & {x_{n 2}} & {\dots} & {x_{n n}}
-	\end{array}\right]
-	\]
+\section{多行公式}
+    % 目前最常用的是 align 环境，它将公式用 & 隔为两部分并对齐。分隔符通常放在等号左边
+    % align默认会加上编号，用notag去掉
+    \begin{align} 
+    a & = b + c \notag \\ 
+    &=d+e 
+    \end{align}
+    
+    % aligned可以不加编号
+    \[
+    \begin{aligned} 
+    a+b+c+d+& e+f+g+h+i \\
+    =& j+k+l+m+n \\
+    =& o+p+q+r+s \\ 
+    =& t+u+v+x+z \end{aligned}
+    \]
 
-	% 带下标的矩阵
-	\[
-	A = \begin{bmatrix}
-		a_{11} & \dots & \text{\Large5}\\ % \text在数学模式下临时切换为文本模式
-		& \ddots  & \vdots \\ % 没有反斜省略号
-		1 &  & 2	
-	\end{bmatrix}_{n \times n} % \times表示×
-	\]
+\section{矩阵}
+    % array环境（类似于表格环境tabular）
+    \[
+    a + b \\ + c\quad % \\行间公式不能换行
+    \begin{array}{l | l}
+    {1} & {2} \\ 
+    \hline
+    {3} & {4}
+    \end{array} 
+    \left[\begin{array}{cccc}
+    {x_{11}} & {x_{12}} & {\dots} & {x_{1 n}} \\ 
+    {x_{21}} & {x_{22}} & {\dots} & {x_{2 n}} \\ 
+    {\vdots} & {\vdots} & {\ddots} & {\vdots} \\ 
+    {x_{n 1}} & {x_{n 2}} & {\dots} & {x_{n n}}
+    \end{array}\right]
+    \]
 
-	% 行内小矩阵（smallmatrix）
-	复数$z = (x, y)$也可用矩阵 
-	\begin{math}
-	\left(\begin{smallmatrix}
-	x & -y \\
-	y & x	
-	\end{smallmatrix}\right) % 定界符加在)左边
-	\end{math}
+    % 带下标的矩阵
+    \[
+    A = \begin{bmatrix}
+        a_{11} & \dots & \text{\Large5}\\ % \text在数学模式下临时切换为文本模式
+        & \ddots  & \vdots \\ % 没有反斜省略号
+        1 &  & 2    
+    \end{bmatrix}_{n \times n} % \times表示×
+    \]
+
+    % 行内小矩阵（smallmatrix）
+    复数$z = (x, y)$也可用矩阵 
+    \begin{math}
+    \left(\begin{smallmatrix}
+    x & -y \\
+    y & x   
+    \end{smallmatrix}\right) % 定界符加在)左边
+    \end{math}
+
+    % 代码    
+    \begin{verbatim}
+    class Solution {
+    public:
+        int numberOfSubarrays(vector<int>& nums, int k) {
+            // use the prefix sum
+            unordered_map <int, int> hash;
+             
+            int ans = 0, tot = 0;
+            hash[0] = 1;
+            for (auto x : nums) {
+                if (x & 1) x = 1;
+                else x = 0;
+                tot += x;
+                // add the number of prefixes that add up to tot - k
+                ans += hash[tot - k]; 
+                hash[tot] ++;
+            }
+            
+            return ans;
+        }
+    };
+            
+    \end{verbatim}
 
 
+\section{复杂公式例子}
+    \[
+    (25)\quad y=\left(x-a_{1}\right)^{a_{1}}\left(x-a_{2}\right)^{a_{2}} \cdots\left(x-a_{n}\right)^{a_{n}}
+    \]
+
+    \[
+    \lim _{x \rightarrow \infty} \frac{x^{2}-5}{x^{2}-1}=1
+    \]
+
+    $$\lim _{x \ddots \infty} {f(x)+ 2} = 1$$
+
+    % \left \right 定界符 保证你的括号大小也会随公式去变化
+    \[1 + \left(\frac{1}{1-x^{2}}
+    \right)^3 \qquad
+    \left.\frac{\partial f}{\partial t}
+    \right|_{t=0}\]
+
+    % 大于号小于号这些你通过mathpix去反着学，很快的
+    \[(1 + x + x^2)^{-1} \leqslant (1 + x + x^2)^{\sin\frac{1}{x}} \geqslant (1+x+x^2)^{1}\] % leqslant需要宏包amssymb
+
+    \[
+    \begin{aligned} y &=\ln \frac{(\sqrt{1+x}-\sqrt{1-x})^{2}}{2 x}=\ln \frac{1-\sqrt{1-x^{2}}}{x} \\ &=\ln (1-\sqrt{1-x^{2}})-\ln x \end{aligned}
+    \]
+
+
+    \[
+    \begin{array}{l}{(26) y^{\prime}=\frac{1}{\sqrt{a^{2}-b^{2}}} \frac{1}{\sqrt{1-\left(\frac{a \sin x+b}{a+b \sin x}\right)^{2}}}} \\ {\times \frac{a \cos x(a+b \sin x)-b \cos x(a \sin x+b)}{(a+b \sin x)^{2}}} \\ {=\frac{\sqrt{a^{2}-b^{2}} \cos x}{|a+b \sin x| \sqrt{a^{2}-b^{2}}|\cos x|}=\frac{\cos x}{|a+b \sin x||\cos x|}}\end{array}
+    \]
+
+    \[
+    H(Y | X)=\sum_{x \in \mathcal{X}, y \in \mathcal{Y}} p(x, y) \log \left(\frac{p(x)}{p(x, y)}\right)
+    \]
+
+    \[
+    \Gamma_{\epsilon}(x)=\left[1-e^{-2 \pi \epsilon}\right]^{1-x} \prod_{n=0}^{\infty} \frac{1-\exp (-2 \pi \epsilon(n+1))}{1-\exp (-2 \pi \epsilon(x+n))}
+    \]
+
+    ${a,b,c}\neq \{a,b,c\}$
 
 \end{document}

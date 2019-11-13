@@ -1,0 +1,53 @@
+\documentclass[12pt, a4paper]{ctexart}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{harpoon}
+\usepackage{ctex}
+\usepackage{amsmath}
+\pagestyle{plain}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\title{数学分析辅导讲义}
+\date{日期 2019/11/15}
+\author{魏森辉}
+  
+
+\begin{document}
+\maketitle{}
+
+\section{概念题}
+    
+
+    \begin{flushleft} % 设置左对齐
+    1. 求$
+    \lim _{x \rightarrow 0^{+}}\left(1+x+x^{2}\right)^{\sin \frac{1}{x}}
+    $的极限
+
+    解：
+    \[
+    \left(1+x+x^{2}\right)^{-1} \leqslant\left(1+x+x^{2}\right)^{\sin \frac{1}{x}} \leqslant\left(1+x+x^{2}\right)^{1}
+    \]
+
+    由迫敛性，得$$\lim _{x \rightarrow 0^{+}} (1+x+x^2)^{\sin \frac{1}{x}} = 1$$
+
+
+    2. 无穷大减无穷大不能判断结果
+    \[
+    \lim _{x \rightarrow \infty} \frac{x^{2}-5}{x^{2}-1}=1
+    \]
+    \end{flushleft}
+
+\section{证明题}
+
+    \begin{proof} % 宏包amsthm
+    For simplicity, we use
+    \[
+    E=mc^2
+    \]
+    That's it.
+    \end{proof}
+
+\end{document}
+
