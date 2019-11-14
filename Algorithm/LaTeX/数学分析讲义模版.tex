@@ -8,7 +8,9 @@
 \usepackage{mathrsfs}
 \usepackage{amssymb}
 \usepackage{amsthm}
+\usepackage[a4paper,left=3cm,right=3cm,top=2cm,bottom=2cm]{geometry} % paperwidth=11cm,scale=0.8
 
+\newtheorem{define}{定义} %在导言区使用，定义环境名
 
 \title{数学分析辅导讲义}
 \date{日期 2019/11/15}
@@ -19,7 +21,25 @@
 \maketitle{}
 
 \section{概念题}
+
+    \begin{define}
+    若映射$\phi(x)$满足从$X \to X$，则称此映射为变换
+    \end{define}
+
+
     \begin{flushleft} % 设置左对齐
+    1.\[
+    \lim _{n \rightarrow \infty} \frac{a_{m} n^{m}+a_{m-1} n^{m-1}+\cdots+a_{1} n+a_{0}}{b_{k} n^{k}+b_{k-1} n^{k-1}+\cdots+b_{1} n+b_{0}}=\left\{\begin{array}{ll}{\frac{a_{m}}{b_{m}},} & {k=m} \\ {0,} & {k>m}\end{array}\right.
+    \] % \{是特殊字符，\left是定界符
+
+    \[\lim _{n \rightarrow \infty} \frac{a_{m}n^{m-k}+a_{m-1}n^{m-1-k}+\cdots+a_1n^{1-k}+a_0n^{-k}}{b_kn^k+b_{k-1}n^{k-1}+\cdots+b_1n^{}+b_0}=\left\{\begin{array}{ll}
+        {\frac{a_m}{b_{m}}},&{k = m} \\ {0,}& {k>m}
+    \end{array}\right.
+    \]
+
+    \[
+\left\{\begin{array}{ll}{\frac{a_{m}}{b_{m}},} & {k=m} \\ {0,} & {k>m}\end{array}\right.
+\]
     1. 求$
     \lim _{x \rightarrow 0^{+}}\left(1+x+x^{2}\right)^{\sin \frac{1}{x}}
     $的极限

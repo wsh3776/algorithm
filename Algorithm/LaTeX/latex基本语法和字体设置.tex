@@ -1,6 +1,9 @@
 %!TEX program = xelatex 
 \documentclass[10pt]{article} % [10pt]设置normal size大小，且只有10 11 12pt 
-\usepackage{fontspec, xunicode, xltxtra, ctex} % ctex是我后来加的 
+\usepackage{xunicode, xltxtra, ctex, lmodern,CJKfntef} % ctex是我后来加的 
+\usepackage{fontspec}
+\setmonofont{Consolas}
+
 
 % 利用newcommand定义新命令 相当于定义函数或typedef
 \newcommand{\myfont} {\textbf{\textsf{Fancy Text}}} 
@@ -11,6 +14,19 @@
 \date{\today}
 
 \begin{document} 
+\section{强调}
+	% 几个常见的强调命令有\uline,\uuline,\uwave,\sout,\dotuline
+	\begin{flushleft}
+
+	\uline{Fashion}\\
+	\uuline{Fashion}\\
+	\uwave{Fashion}\\
+	\sout{Fashion}\\
+	\dotuline{Fashion}\\
+
+	\end{flushleft}
+
+
 	{\myfont $ 12\degree$}
 
 	% 字体族设置（罗马字体、无衬线字体、打字机字体）

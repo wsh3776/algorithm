@@ -1,30 +1,36 @@
 %!TEX program = xelatex 
 \documentclass{article} 
 \usepackage{xunicode, xltxtra, ctex, amsmath} 
+\usepackage{lmodern}
+\usepackage[a4paper,left=3cm,right=3cm,top=2cm,bottom=2cm]{geometry} % paperwidth=11cm,scale=0.8
 
-\title{My First Document} 
+\title{My First \LaTeX \quad Document} 
 \author{Wilson79} 
 \date{\today}
 
 \begin{document} 
     \tableofcontents % 产生文档目录
-	\maketitle %{第一章} 
+    \thispagestyle{empty} %目录页不显示页码
+    \newpage
+    \setcounter{page}{1} % 从下面开始编页码
+    
+    \maketitle %{第一章} 
 
-	%\chapter{绪论} % 章节命令 需要选book类，另外此时subsubsection无效
-	\section{Introduction} 
-	准备好了!本章将见识到 LATEX 闻名的强项——排版数学公式。当然你得注意了， 本章的内容只是一点皮毛，虽然对大多数人来说已经够用了，但是如果不能解决你的问 题的话也不要大惊小怪，求助于搜索引擎或者有经验的人不失为一个好办法。
-	
-	本章介绍一些特色的 LATEX 辅助功能。前两个功能 BIBTEX 和 makeindex 依靠一些 辅助程序自动生成参考文献、索引等;之后的使用颜色、超链接等则令我们生成美观易 用的电子文档。 
+    %\chapter{绪论} % 章节命令 需要选book类，另外此时subsubsection无效
+    \section{Introduction} 
+    准备好了!本章将见识到 LATEX 闻名的强项——排版数学公式。当然你得注意了， 本章的内容只是一点皮毛，虽然对大多数人来说已经够用了，但是如果不能解决你的问 题的话也不要大惊小怪，求助于搜索引擎或者有经验的人不失为一个好办法。
+    
+    本章介绍一些特色的 LATEX 辅助功能。前两个功能 BIBTEX 和 makeindex 依靠一些 辅助程序自动生成参考文献、索引等;之后的使用颜色、超链接等则令我们生成美观易 用的电子文档。 
 
-	\section{Experimental method} %小节
+    \section{Experimental method} %小节
 
-	\section{Experimental result}
-	\subsection{date} %子小节
-	\subsection{graph} %子小节
-	\subsubsection{experiment condition} %子小节
-	\subsubsection{experimental process} %子小节
+    \section{Experimental result}
+    \subsection{date} %子小节
+    \subsection{graph} %子小节
+    \subsubsection{experiment condition} %子小节
+    \subsubsection{experimental process} %子小节
 
-	\section{Conclusion}
+    \section{Conclusion}
 
 
 \end{document}

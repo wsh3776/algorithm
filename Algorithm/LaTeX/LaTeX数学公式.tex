@@ -1,6 +1,7 @@
 \documentclass{article} 
 \usepackage{xunicode, xltxtra, lmodern, ctex} 
 \usepackage{amsthm, amssymb, amsmath}
+\usepackage[a4paper,left=3cm,right=3cm,top=2cm,bottom=2cm]{geometry} 
 
 \title{Math Type} 
 \author{Wilson79} 
@@ -11,7 +12,32 @@
     \maketitle %{第一章} 
     
     $f(x)=\frac{1}{\sqrt{2 \pi \sigma x}} e^{-\frac{(x-\mu)^{2}}{2 \sigma^{2}}}$
+
+\section{数学符号汇总！}
     
+    % 通过\limits把下标调到正侧
+    $\sum _{i=1}^{n}$ % 行内公式的那些下标一般是偏右侧的，而行间公式会在正侧
+    $\sum \limits_{i=1}^{n}$
+    $\lim\limits _{x \rightarrow 0+} x^2 + x$ 
+
+    \[
+    \begin{aligned} 
+        \geq \\ % 大于等于
+        \leq \\ % 小于等于
+        \neq \\ % 不等于
+        \{  \\  % { 需要转义
+        d \quad \mathrm{d} \\ %斜体与非斜体
+        \rightarrow \\ % 右箭头
+        \quad %\quad表示拉开一段距离
+        \sum\limits_{i=1}^{n} \\ % 加个limits表示下标位置在正上方
+        =& o+p+q+r+s \\ 
+        =& t+u+v+x+z 
+    \end{aligned}
+    \]
+    
+
+    
+
 \section{行内公式} %小节
     我们来看公式$a+b=2$ % 行内公式 $$ 或 \( \) 或 \begin{math} \end{math}
 
@@ -207,4 +233,31 @@
 
     ${a,b,c}\neq \{a,b,c\}$ % \neq 不等于
 
+\section{积分}
+    \[
+    \lim _{n \rightarrow \infty} \int_{E} f_{n}(x) \mathrm{d} x=0
+    \]
+
+    $x^{2} \geq 0 \qquad
+    \text{for \textbf{all} }
+    x\in\mathbb{R}$
+
+    \[
+    \sup _{\varphi \leq f}\left\{\int_{E} \varphi \mathrm{d} x\right\}
+    \]
+
+    % 较复杂的下标
+    \[
+    \int_{E} f(x) \chi_{\{x \in E: f(x)>N\}}(x) \mathrm{d} x<\varepsilon
+    \]
+
+    % 实变函数的公式
+    \[
+    \sum_{n \geq 0} \int_{E_{n}}|f(x)| \mathrm{d} x=\int_{\cup_{n \geq 0} E_{n}}|f(x)| \mathrm{d} x=\int_{\mathbb{R}}|f(x)| \mathrm{d} x<\infty
+    \]
+    
+    % 集合
+    \[
+    \{x \in[a, b]: f(x) \neq 0\}=\{x \in[a, b]: f(x)>0\} \cup\{x \in[a, b]: f(x)<0\}
+    \]
 \end{document}
