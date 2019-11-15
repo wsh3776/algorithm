@@ -26,6 +26,10 @@
         \leq \\ % 小于等于 less
         \neq \\ % 不等于   not
         \sim \\ % ~
+        \varepsilon \\
+        \forall \\ % 任意
+        \exists \\ % 存在
+        \Rightarrow \\ 
         \vert x \vert \\ % |x|
         \Vert x \Vert \\ % ||x||
         \sin x \\ % sinx它们中间需要加个空格
@@ -128,9 +132,9 @@
     &=d+e 
     \end{align}
     
-    % aligned可以不加编号
+    % aligned可以不加编号,它需要与\[ \]嵌套使用
     \[
-    \begin{aligned} 
+    \begin{aligned}  % 不能有多余的空行，会报错
     a+b+c+d+& e+f+g+h+i \\
     =& j+k+l+m+n \\
     =& o+p+q+r+s \\ 
