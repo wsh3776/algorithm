@@ -7,6 +7,8 @@
 \author{Wilson79} 
 \date{\today}
 
+% 数学公式参考 https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
+
 \begin{document} 
     \tableofcontents % 产生文档目录
     \maketitle %{第一章} 
@@ -20,13 +22,18 @@
     $\sum \limits_{i=1}^{n}$
     $\lim\limits _{x \rightarrow 0+} x^2 + x$ 
 
+
+    \[a^2 = b ^2 + c^2 \tag{*}\] % 行间公式可以加自定义tag编号
+
     \[
-    \begin{aligned} 
+    \begin{aligned}  % aligned内不能随意空行
         \geq \\ % 大于等于 great
         \leq \\ % 小于等于 less
         \neq \\ % 不等于   not
         \sim \\ % ~
+        \prod \\ % 累乘
         \varepsilon \\
+        \times \\ % 乘号
         \forall \\ % 任意
         \exists \\ % 存在
         \Rightarrow \\ 
@@ -50,8 +57,8 @@
     我们来看公式$a+b=2$ % 行内公式 $$ 或 \( \) 或 \begin{math} \end{math}
 
 \section{行间公式}
-    \[a^2 = b ^2 + c^2 \] % 行间公式
-    $$a^2 = b ^2 + c^2$$
+    \[a^2 = b ^2 + c^2 \tag{*}\] % 行间公式
+    $$a^2 = b ^2 + c^2 $$
     \begin{displaymath}
     a^2 = b ^2 + c^2
     \end{displaymath}
@@ -141,6 +148,40 @@
     =& t+u+v+x+z \end{aligned}
     \]
 
+    \begin{gather}
+    a+b=b+a \notag \\
+    ab = ba    
+    \end{gather}
+
+    \begin{gather*}
+    3+5=5+3 \\
+    3 \times 5 = 5 \times 3
+    \end{gather*}
+
+
+\section{分段函数}
+    
+    % 法一    
+    $$
+    D(x) = \left\{
+    \begin{array}{ll}
+    {0} & \text{如果 } x \in \mathbb{Q}; \\ 
+    {1} & \text{如果 } x \in \mathbb{R} \setminus \mathbb{Q}
+    \end{array}\right.
+    $$
+
+    % 法二
+    % cases 环境
+    % 每行公式中使用&分隔为两部分
+    % 通常表示值和后面的条件
+    \begin{equation}
+    D(x) = \begin{cases}
+    1, & \text{如果 } x \in \mathbb{Q}; \\
+    0, & \text{如果 } x \in \mathbb{R} \setminus \mathbb{Q}
+    \end{cases}
+    \end{equation}
+
+
 \section{矩阵}
     % array环境（类似于表格环境tabular）
     \[
@@ -211,13 +252,14 @@
     \lim _{x \rightarrow \infty} \frac{x^{2}-5}{x^{2}-1}=1
     \]
 
-    $$\lim _{x \ddots \infty} {f(x)+ 2} = 1$$
+    $$\lim _{x \rightarrow \infty} {f(x)+ 2} = 1$$
 
     % \left \right 定界符 保证你的括号大小也会随公式去变化
-    \[1 + \left(\frac{1}{1-x^{2}}
-    \right)^3 \qquad
-    \left.\frac{\partial f}{\partial t}
-    \right|_{t=0}\]
+    \[
+    1 + \left(\frac{1}{1-x^{2}}\right)^3 \qquad
+    \left. \frac{\partial f}{\partial t}
+    \right|_{t = 0}
+    \]
 
     % 大于号小于号这些你通过mathpix去反着学，很快的
     \[(1 + x + x^2)^{-1} \leqslant (1 + x + x^2)^{\sin\frac{1}{x}} \geqslant (1+x+x^2)^{1}\] % leqslant需要宏包amssymb
@@ -268,4 +310,7 @@
     \[
     \{x \in[a, b]: f(x) \neq 0\}=\{x \in[a, b]: f(x)>0\} \cup\{x \in[a, b]: f(x)<0\}
     \]
+
+
+
 \end{document}
