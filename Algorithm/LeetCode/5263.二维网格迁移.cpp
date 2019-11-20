@@ -2,6 +2,7 @@ class Solution {
 public:
     vector<vector<int>> shiftGrid(vector<vector<int>> &grid, int k) {
 
+        // brute force
         while(k --) {
             vector<vector<int>> tmp(grid);
 
@@ -26,3 +27,4 @@ public:
 
     }
 };
+

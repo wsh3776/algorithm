@@ -2,6 +2,7 @@
 \usepackage{xunicode, xltxtra, lmodern, ctex} 
 \usepackage{amsthm, amssymb, amsmath}
 \usepackage[a4paper,left=3cm,right=3cm,top=2cm,bottom=2cm]{geometry} 
+\usepackage{xcolor} % 加颜色
 
 \title{Math Type} 
 \author{Wilson79} 
@@ -23,7 +24,7 @@
     $\lim\limits _{x \rightarrow 0+} x^2 + x$ 
 
 
-    \[a^2 = b ^2 + c^2 \tag{*}\] % 行间公式可以加自定义tag编号
+    {\color{blue} \[a^2 = b ^2 + c^2 \tag{*}\]} % 行间公式可以加自定义tag编号
 
     \[
     \begin{aligned}  % aligned内不能随意空行
@@ -139,7 +140,7 @@
     &=d+e 
     \end{align}
     
-    % aligned可以不加编号,它需要与\[ \]嵌套使用
+    % aligned可以不加编号,它需要与\[ \]嵌套使用,而align不能加\[ \]
     \[
     \begin{aligned}  % 不能有多余的空行，会报错
     a+b+c+d+& e+f+g+h+i \\

@@ -1,0 +1,21 @@
+Part1
+b站题解视频：
+https://www.bilibili.com/video/av68341690
+https://space.bilibili.com/611212
+
+
+Part2
+Codeforces精通指南：https://www.luogu.org/blog/ezoixx130/codeforces-advanced-tutorial
+
+同一个contest的Div1和Div2是以题号如1254/A，1255/A区分的
+
+所以存题目的时候只要记下题目题号+名称即可（注意题号是网址上的题号，不是第几次contest）
+
+
+Part3
+workflow快速查题目::cf（改后面的参数即可）：
+http://codeforces.com/problemset/problem/1254/a
+A和a大小写均可
+
+
+可以用万能头文件#include <bits/stdc++.h> 但是编译速度会变慢，还是一个个写吧
