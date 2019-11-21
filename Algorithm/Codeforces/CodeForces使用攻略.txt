@@ -10,7 +10,7 @@ Codeforces精通指南：https://www.luogu.org/blog/ezoixx130/codeforces-advance
 同一个contest的Div1和Div2是以题号如1254/A，1255/A区分的
 
 所以存题目的时候只要记下题目题号+名称即可（注意题号是网址上的题号，不是第几次contest）
-
+命名时不要加1248A. 后的空格，否则终端不能运行
 
 Part3
 workflow快速查题目::cf（改后面的参数即可）：
