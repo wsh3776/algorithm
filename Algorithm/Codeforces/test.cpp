@@ -1,17 +1,19 @@
 #include <iostream>
-
 using namespace std;
-
 const int mod = 1e9 + 7;
 
 int f[100005];
+int msain(int a) {
+    cout << 1;
+    return a;
+}
 
 int main() {
     #ifdef ONLINE_JUDGE
     #else
     freopen("in.txt","r",stdin);
     #endif
-   
+
     int n, m;
     cin >> n >> m;
 
@@ -24,4 +26,4 @@ int main() {
 
 
     return 0;
-Q}
+}
