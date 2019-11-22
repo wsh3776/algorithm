@@ -11,7 +11,7 @@ int main() {
     #else
     freopen("in.txt","r",stdin);
     #endif
-
+   
     int n, m;
     cin >> n >> m;
 
@@ -24,4 +24,4 @@ int main() {
 
 
     return 0;
-}
+Q}

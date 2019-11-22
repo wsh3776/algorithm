@@ -1,11 +1,9 @@
 #include <iostream>
-
 using namespace std;
-
 int main() {
     int a, b;
     cin >> a >> b;
-     
+
     if (a == 9 && b == 1) cout << 9 << " " << 10 << endl;
     else if (a - b != 0 && a - b != -1) cout << -1 <<endl;
     else {
