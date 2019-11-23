@@ -69,17 +69,17 @@
   \z@{9pt plus12pt}{-.5em}%
   {\scshape}}
 
-\def\@seccntformat#1{\csname the#1\endcsname.\enskip}
+\def\@seccntformat#1{\csname the#1\endcsname.\enpip}
 
 %    Durn it, looks like a LaTeX kernel bug: consecutive "run-in" section
 %    titles should not allow a page break between them.
 \def\@startsection #1#2#3#4#5#6{%
-  \if@noskipsec \leavevmode\par\nobreak\vskip\medskipamount\@nobreaktrue\fi
+  \if@nopipsec \leavevmode\par\nobreak\vpip\medpipamount\@nobreaktrue\fi
   \par
-  \@tempskipa#4\relax \@afterindenttrue
-  \ifdim\@tempskipa<\z@ \@tempskipa-\@tempskipa \@afterindentfalse \fi
+  \@temppipa#4\relax \@afterindenttrue
+  \ifdim\@temppipa<\z@ \@temppipa-\@temppipa \@afterindentfalse \fi
   \if@nobreak \everypar{}%
-  \else \addpenalty\@secpenalty \addvspace\@tempskipa
+  \else \addpenalty\@secpenalty \addvspace\@temppipa
   \fi
   \@ifstar{\@ssect{#3}{#4}{#5}{#6}}%
           {\@dblarg{\@sect{#1}{#2}{#3}{#4}{#5}{#6}}}%
@@ -93,11 +93,11 @@
     \refstepcounter{#1}%
     \protected@edef\@svsec{\@seccntformat{#1}\relax}%
   \fi
-  \@tempskipa #5\relax
-  \ifdim \@tempskipa>\z@
+  \@temppipa #5\relax
+  \ifdim \@temppipa>\z@
     \begingroup
       #6{%
-        \@hangfrom{\hskip #3\relax\@svsec}%
+        \@hangfrom{\hpip #3\relax\@svsec}%
           \interlinepenalty \@M #8\@@par}%
     \endgroup
     \csname #1mark\endcsname{#7}%
@@ -108,7 +108,7 @@
       #7}%
   \else
     \def\@svsechd{%
-      #6{\hskip #3\relax
+      #6{\hpip #3\relax
       \@svsec #8\@addpunct.}%
       \csname #1mark\endcsname{#7}%
       \addcontentsline{toc}{#1}{%
@@ -127,7 +127,7 @@
 
 %    Workaround to avoid overprinting problem with first contents entry
 \let\zz@l@section\l@section
-\def\l@section{\if@noskipsec \mbox{}\par\fi\zz@l@section}
+\def\l@section{\if@nopipsec \mbox{}\par\fi\zz@l@section}
 
 \RequirePackage{keyval}\relax
 
@@ -138,15 +138,15 @@
 \providecommand{\newcolumn}{\vfil\break}
 
 \newenvironment{symlist}[1][]{%
-  \if@noskipsec\ifvmode\nobreak\fi\leavevmode\fi
+  \if@nopipsec\ifvmode\nobreak\fi\leavevmode\fi
   \par
   \nobreak
   \wdadjust=1.5em\relax
   \gdef\containsMSABM{TF}%
   \setkeys{symlist}{#1}%
     \setbox\z@\vbox\bgroup
-      \advance\baselineskip \z@ plus2pt\relax
-      % work around splittopskip discrepancy
+      \advance\baselinepip \z@ plus2pt\relax
+      % work around splittoppip discrepancy
       \null \penalty-\@M
 }{%
   \par\egroup
@@ -169,10 +169,10 @@
   \divide\cols\dimen@ \advance\cols\coladjust
   \ifnum\cols<\z@ \cols=\@ne \fi
   \dimen@\ht0 \divide\dimen@\cols
-  \advance\dimen@\baselineskip \divide\dimen@\baselineskip
-  \multiply\dimen@\baselineskip
-  \splittopskip10pt\relax \splitmaxdepth\maxdepth
-  \advance\dimen@\splittopskip \advance\dimen@-\baselineskip
+  \advance\dimen@\baselinepip \divide\dimen@\baselinepip
+  \multiply\dimen@\baselinepip
+  \splittoppip10pt\relax \splitmaxdepth\maxdepth
+  \advance\dimen@\splittoppip \advance\dimen@-\baselinepip
   \advance\dimen@\htadjust
   \vbadness\@M % ignore underfull vbox messages
 \debugit
@@ -180,13 +180,13 @@
     \advance\curcol 1
     \setbox2=\vsplit0 to\dimen@
     \ifnum\curcol=\cols \vtop \else \vtop to\dimen@\fi
-      {\unvbox 2 }\hskip\colsep
+      {\unvbox 2 }\hpip\colsep
     \ifdim\ht0>\z@ \expandafter\do\fi
   }%
-  \setbox2=\vsplit0 to\baselineskip % discard empty top box
-  \hbox to\textwidth{\hskip\shiftlistright\quad\curcol=0 \do\unskip\hfil}%
+  \setbox2=\vsplit0 to\baselinepip % discard empty top box
+  \hbox to\textwidth{\hpip\shiftlistright\quad\curcol=0 \do\unpip\hfil}%
   % cancel a large prevdepth
-  \nobreak\nointerlineskip\hbox{}%
+  \nobreak\nointerlinepip\hbox{}%
   \endgroup
   \global\shiftlistright20pt
 }
@@ -198,7 +198,7 @@
 }
 
 \newdimen\wdadjust \newdimen\htadjust
-\newskip\colsep \newcount\cols \newcount\curcol \newcount\coladjust
+\newpip\colsep \newcount\cols \newcount\curcol \newcount\coladjust
 \colsep=10pt plus1fil minus2pt
 
 \newbox\symstrut
@@ -312,13 +312,13 @@
 %% rsfs has nothing in some of the example slots, gets ! Missing character
 
 \newenvironment{eqxample}{%
-  \par\addvspace\medskipamount
+  \par\addvspace\medpipamount
   \noindent\begin{minipage}{.5\columnwidth}%
   \def\producing{\end{minipage}\begin{minipage}{.5\columnwidth}%
     \hbox\bgroup\kern-.2pt\vrule width.2pt\vbox\bgroup\parindent0pt\relax
-%    The 3pt is to cancel the -\lineskip from \displ@y
-    \abovedisplayskip3pt \abovedisplayshortskip\abovedisplayskip
-    \belowdisplayskip0pt \belowdisplayshortskip\belowdisplayskip
+%    The 3pt is to cancel the -\linepip from \displ@y
+    \abovedisplaypip3pt \abovedisplayshortpip\abovedisplaypip
+    \belowdisplaypip0pt \belowdisplayshortpip\belowdisplaypip
     \noindent}
 }{%
   \par
@@ -327,10 +327,10 @@
   \hrule height0pt width\hsize
   \egroup\vrule width.2pt\kern-.2pt\egroup
   \end{minipage}%
-  \par\addvspace\medskipamount
+  \par\addvspace\medpipamount
 }
 
-\newcommand{\noteslabel}[1]{\hskip\labelsep\textit{#1\unskip}}
+\newcommand{\noteslabel}[1]{\hpip\labelsep\textit{#1\unpip}}
 
 \newcommand{\singlenote}{\item[\textit{Note.}]}
 \newcommand{\synonyms}{\item[\textit{Synonyms\/}:]}
@@ -341,7 +341,7 @@
     \footnotesize
     \setlength{\leftmargin}{0pt}%
     \setlength{\labelwidth}{0pt}%
-    \setlength{\topsep}{\medskipamount}%
+    \setlength{\topsep}{\medpipamount}%
     \renewcommand{\makelabel}{\noteslabel}%
   }%
   \if\containsMSABM %
@@ -471,9 +471,9 @@
 \DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\esssup}{ess\,sup}
 
-\newcommand{\dotsref}{\leavevmode\unskip\space
+\newcommand{\dotsref}{\leavevmode\unpip\space
   (see Section~\ref{dots})}
-\newcommand{\vertref}{\leavevmode\unskip\space
+\newcommand{\vertref}{\leavevmode\unpip\space
   (see Section~\ref{verts})}
 
 \providecommand{\pdfinfo}[1]{}
@@ -516,10 +516,10 @@ Thanks to all who contributed suggestions, assistance and encouragement.
 Special thanks to David Carlisle for repairing unruly macros and to
 Jennifer Wright Sharp for applying consistent editing in AMS style.
 
-\smallskip\noindent
+\smallpip\noindent
 Plans for a future edition include addition of an index.
 
-\smallskip\noindent
+\smallpip\noindent
 Reports concerning errors and suggestions for improvement should be
 sent to\\[2pt]
 \hspace*{\fill}
@@ -574,7 +574,7 @@ system prompt.
 \caption[]{Multiline equations and equation groups\\
  \phantom{Table 1:} (vertical lines indicate nominal margins).}
 \label{displays}
-\bigskip
+\bigpip
 \begin{makeimage}
 \begin{minipage}{\textwidth}
 \begin{eqxample}
@@ -731,7 +731,7 @@ following commands and environments.%
 \begin{center}
 \begin{tabular}{ccc}
 \colhead{inline formulas}&& \colhead{displayed equations}\\[3pt]
-\cline{1-1}\cline{3-3}\noalign{\medskip}
+\cline{1-1}\cline{3-3}\noalign{\medpip}
 \begin{cstack}
   \verb'$' \dots\ \verb'$'\\
   \verb'\(' \dots\ \verb'\)'
@@ -859,8 +859,8 @@ subequation number.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\providecommand{\dotsref}{\leavevmode\unskip\ignorespaces}
-\providecommand{\vertref}{\leavevmode\unskip\ignorespaces}
+\providecommand{\dotsref}{\leavevmode\unpip\ignorespaces}
+\providecommand{\vertref}{\leavevmode\unpip\ignorespaces}
 
 \section{Math symbols and math fonts}\label{mathsymbols}
 \subsection{Classes of math symbols}
@@ -874,7 +874,7 @@ the readability of formulas.
 \begin{center}
 \begin{tabular}{clll}
 \colhead{Class\\number}& \colhead{Mnemonic}& \colhead{Description\\(part
-of speech)}& \colhead{Examples}\\\hline\noalign{\smallskip}
+of speech)}& \colhead{Examples}\\\hline\noalign{\smallpip}
 0& Ord& simple/ordinary (\qq{noun})& $A\;0\;\Phi\;\infty$\\
 1& Op& prefix operator& $\sum\;\prod\;\int$\\
 2& Bin& binary operator (conjunction)& ${+}\;{\cup}\;{\wedge}$\\
@@ -2315,7 +2315,7 @@ $
 \end{center}
 The extra pair of empty braces is explained by the fact that
 \cn{sideset} has the capability of putting an extra symbol or symbols at
-each corner of a large operator; to put an asterisk at each corner of a
+each corner of a large operator; to put an asterip at each corner of a
 product symbol, you would type
 \begin{center}
 \begin{tabular}{ll}
@@ -2435,7 +2435,7 @@ The \TeX{} Catalogue,\\
 \url{http://mirror.ctan.org/help/Catalogue/alpha.html},\\
 is a good place to look if you know a package's name.
 
-\medskip
+\medpip
 Questions and answers on specific \TeX-related topics are the
 \emph{raison d'\^etre} of this forum:\\
 \null\hspace{2\parindent}
@@ -2444,7 +2444,7 @@ Check the archives for existing answers; pointers to selected topics
 may expedite your search:\\
 \null\hspace{2\parindent}
 \url{https://tex.meta.stackexchange.com/a/2425#2425}\\
-If nothing useful turns up, ask your own question.
+If nothing useful turns up, ap your own question.
 
 %\newpage
 
