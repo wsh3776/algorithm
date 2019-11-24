@@ -10,7 +10,6 @@ int main() {
 	#else
 	freopen("in.txt","r",stdin);
 	#endif
-
 	
     int n;
     cin >> n;
@@ -27,7 +26,6 @@ int main() {
     }
     
     cout << res << endl;
-
 
 
     return 0;
