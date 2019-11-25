@@ -26,7 +26,7 @@ public:
 
         second -> next = second -> next -> next;
         
-        return dummy -> next; // 真正的头结点
-        // 为什么return head;不行，详见数据结构笔记               
+        return dummy -> next; // This is the real head point, rather than origin head
+        // Why return head; not right, I explain it in my data structure Notes
     }
 };
