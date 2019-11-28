@@ -5,6 +5,8 @@
 
 # Unignore files with specific extensions
 !*.cpp
+!*.python
+!*.java
 !*.txt
 !*.md
 !*.png
