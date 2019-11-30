@@ -1,117 +1,64 @@
-\begin{sff}
-    fsad
-\end{sff}
+\documentclass[12pt, a4paper]{ctexart}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{harpoon}
+\usepackage{ctex}
+\usepackage{amsmath}
+\pagestyle{plain}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\begin{asfd}
+\usepackage{sdf}
+    $sft 
+    $sdf \text{sdf} 
+\frac{num}{den}
+\frac{f}{den}
+    \[
+    
+    .\] 
+\begin{}
+    
+    \usepackage{sdf}
+    \usepackage{package}
+\end{}          
+\begin{}
+\begin{ff}
+    sdf     
+    \begin{}
 
-i sdf  sdf
-ali v
-i
-\usepackage[sdf]{package}
-\item
-\begin{iteQize}
-    \item sdf
-"\end{itemize}"
+    \end{}
+\end{ff}
+        
+\end{}
+\end{asfd}
 
-2snippet2 beg "begin{} / end{}" bA
-\\begin$1
-	$0
-\\end{$1}
-endsnippet
+\title{时间序列分析 作业}
+\author{10161511403, 魏森辉}
+\date{日期 2019/11/11}
+ a ^ {sdf}s
+\begin{documen}
+    
+\end{documen}
+\begin{document}
+\maketitle{}
 
-priority 100
-snippet ... "ldots" iA
-\ldots 
-endsnippet
 
-snippet table "Table environment" b
-\begin{table}[${1:htpb}]
-	\centering
-	\caption{${2:caption}}
-	\label{tab:${3:label}}
-	\begin{tabular}{${5:c}}
-	$0${5/((?<=.)c|l|r)|./(?1: & )/g}
-	\end{tabular}
-\end{table}
-endsnippet
+\begin{flushleft}
+\qquad 题目：
+时间序列论文题目
+1.论述Kalman 滤波方法在金融时间序列分析中的应用
+（研究历史、研究现状、模型举例）
 
-snippet fig "Figure environment" b
-\begin{figure}[${1:htpb}]
-	\centering
-	${2:\includegraphics[width=0.8\textwidth]{$3}}
-	\caption{${4:$3}}
-	\label{fig:${5:${3/\W+/-/g}}}
-\end{figure}
-endsnippet
+2.论述非平稳时间序列的主要方法和研究意义
 
-<hemtl><</hemtl>tt>snippet</tt> enum "Enumerate" bA
-\begin{enumerate}
-	\item $0
-\end{enumerate}
-endsnippet
+19周周二交
+二选一
+包括论文题目 摘要 主要章节 参考文献
+单栏不少于六页
 
-snippet item "Itemize" bA
-\begin{itemize}
-	\item $0
-\end{itemize}
-endsnippet
+\qquad 答：
 
-snippet desc "Description" b
-\begin{description}
-	\item[$1] $0
-\end{description}
-endsnippet
+\end{flushleft}
 
-snippet pac "Package" b
-\usepackage[${1:options}]{${2:package}}$0
-endsnippet
+\end{document}
 
-snippet => "implies" Ai
-\implies
-endsnippet
-
-snippet =< "implied by" Ai
-\impliedby
-endsnippet
-
-context "math()"
-snippet iff "iff" wA
-\iff
-endsnippet
-
-snippet mk "Math" wA
-$${1}$`!p
-if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
-	snip.rv = ' '
-else:
-	snip.rv = ''
-`$2
-endsnippet
-
-snippet dm "Math" wA
-\[
-	${1:${VISUAL}}
-\]
-endsnippet
-
-snippet ali "Align" bA
-\begin{align*}
-${1:`!p
-selectedcode = [x for x in snip.v.text.split("\n") if x]
-for (i, x) in enumerate(selectedcode):
-    index = findfirstoperator(x)
-    snip.rv += ("" if i == 0 else "    ") + x[:index] + "&" + x[index:] + "\\\\" + ("" if i == len(selectedcode) - 1 else "\n")
-`}
-\end{align*}
-endsnippet
-
-snippet bali "Align with {" bA
-\[
-\left\{
-\begin{align*}
-${1:`!p
-selectedcode = [x for x in snip.v.text.split("\n") if x]
-for (i, x) in enumerate(selectedcode):
-    index = findfirstoperator(x)
-    snip.rv += ("" if i == 0 else "    ") + x[:index] + "&" + x[index:] + "\\\\" + ("" if i == len(selectedcode) - 1 else "\n")
-`}\end{align*}
-\]
-endsnippet

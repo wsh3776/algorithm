@@ -1,23 +1,5 @@
-#include <iostream>
-#include <map>
-using namespace std;
 
-int main() {
-    map <char, int> hash;
-    string s, res = "";
-    cin >> s;
-
-    int n = s.size();
-    for (int i = 0; i < n; i ++) {
-        if (++hash[s[i]] == 1) {
-            res += s[i];
-        }
-    }
-
-    cout << res << endl;
-    return 0;
-}
-
+    
 // 回文串
 #include <iostream>
 #include <algorithm>
