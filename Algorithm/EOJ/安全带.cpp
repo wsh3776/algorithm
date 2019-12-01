@@ -10,7 +10,7 @@ int main() {
 	#else
 	freopen("in.txt","r",stdin);
 	#endif
-
+    
     set <pair<int, int> > hash;
     int n;
     cin >> n;
@@ -26,7 +26,7 @@ int main() {
 
     res += a[0] * a[n - 1]; 
     hash.insert({0, n - 1});
-    
+
     int t = 0;
     for (int i = 0; i < n; i ++) {
         cin >> t;

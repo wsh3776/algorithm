@@ -9,7 +9,7 @@ int a[100005];
 int main() {
     #ifdef ONLINE_JUDGE
     #else
-    freopen("in.txt","r",stdin);
+    freopen("in.txt", "r", stdin);
     #endif
 
     int n;
