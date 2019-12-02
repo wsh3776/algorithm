@@ -1,10 +1,45 @@
-作者：Wilson79
+@Author: Wilson79
 
-个人博客地址：
-https://blog.csdn.net/qq_43827595
+@Blogs: https://blog.csdn.net/qq_43827595
 
-- 示例：完全背包代码模版
+哈夫曼问题的最优解
+```cpp
+#include <iostream>
+#include <vector>
+#include <queue>
 
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    // 小根堆
+    priority_queue <int, vector<int>, greater<int> > heap;
+
+	for (int i = 0; i < n; i ++) {
+        int x;
+        cin >> x;
+        heap.push(x);
+	}
+    
+    int res = 0;
+    while(heap.size() > 1) {
+        int a = heap.top();
+        heap.pop();
+        int b = heap.top();
+        heap.pop();
+
+        res += a + b;
+        heap.push(a + b);
+    }
+
+    cout << res << endl;
+
+    return 0;
+}
+```
+
+完全背包问题
 ```cpp
 #include <iostream>
 #include <algorithm>
@@ -32,3 +67,4 @@ int main() {
 }
 
 ```
+
