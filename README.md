@@ -1,28 +1,34 @@
-<!--
- * @Author: shwei
- * @Date: 2019-08-24 08:07:04
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2019/08/26 21:44
- -->
-# Algorithm
-Be happy in the kingdom of algorithm.
+作者：Wilson79
 
-- cpp模版
+个人博客地址：
+https://blog.csdn.net/qq_43827595
+
+- 示例：完全背包代码模版
 
 ```cpp
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
-int main() {
-    #ifdef ONLINE_JUDGE
-    #else
-    freopen("in.txt", "r", stdin);
-    #endif
-    
-    cout << "Hello My Friend" << endl;
+const int N = 1010;
+int v[N], w[N], f[N];
 
-    return 0;
+int main() {
+    int n, m;
+    cin >> n >> m;
+    
+    for (int i = 1; i <= n; i++) cin >> v[i] >> w[i];
+    
+    for (int i = 1; i <= n; i++) {
+        for (int j = v[i]; j <= m; j++) {    // 正序
+            f[j] = max(f[j], f[j - v[i]] + w[i]);
+            // 朴素：f[i][j] = max(f[i - 1][j], f[i][j - v[i]] + w[i]) 
+            // f[i][j - v[i]] + w[i] = max(x, x, x, ...)
+        }
+    }
+    
+    cout << f[m] << endl;
 }
 
 ```
