@@ -18,12 +18,6 @@ int find(int x)
 }
 
 int main() {
-    #ifdef ONLINE_JUDGE
-    #else
-        freopen("in.txt","r",stdin);
-        //freopen("out.txt","w",stdout);
-    #endif
-
     string c; // 用string, 不会遇到M，Q1，Q2这种询问的麻烦
     int a, b;
     cin >> n >> m;
