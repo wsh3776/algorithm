@@ -38,6 +38,7 @@ void bfs(int sx, int sy, vector<vector<char>> &board, char c) {
     return;
 }
 
+
 class Solution {
 public:
     void solve(vector<vector<char>> &board) {

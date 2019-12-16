@@ -27,13 +27,3 @@ public:
     }
 };
 
-if (j1 >= 1 && j1 <= n && j2 >= 1 && j2 <= n) {
-    int t = w[i1][j1];
-    if (i1 != i2) t += w[i2][j2];
-
-    int &x = f[k][i1][i2]; // 引用，给变量取个别名
-    x = max(x, f[k - 1][i1 - 1][i2 - 1] + t);
-    x = max(x, f[k - 1][i1 - 1][i2] + t);
-    x = max(x, f[k - 1][i1][i2 - 1] + t);
-    x = max(x, f[k - 1][i1][i2] + t);
-}
