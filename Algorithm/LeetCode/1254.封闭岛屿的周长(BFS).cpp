@@ -5,7 +5,7 @@
  */
 
 
-// 原题是求数量，我改成了求周长
+// 原题是求封闭岛屿数量，我改成了求封闭岛屿的周长
 const int N = 120;
 typedef pair<int, int> PII;
 #define x first
