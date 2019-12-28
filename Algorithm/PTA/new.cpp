@@ -1,68 +1,43 @@
-按距离根节点从近到远的顺序，把这条x到根节点路径上的点的距离都更新一遍
-食物链和银河战舰的传说  好题
+/**
+ *    @Author: Wilson79
+ *    @Datetime: 2019年12月28日 星期六 14:40:26
+ *    @Filename: new.cpp
+ */
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode *addTwoNumbers(ListNode *l1, ListNode *l2) {
+        int t = 0;
+        auto res = new ListNode(-1);
+
+        auto q = res;
+
+        while(l1 || l2) {
+            if (l1) {
+                t += l1->val;
+                l1 = l1->next;
+            }
+            if (l2) {
+                t += l2->val;
+                l2 = l2->next;
+            }
+            auto p = new ListNode(t % 10);
+            t /= 10;
+            q -> next = p;
+            q = p;
 
 
-如果用scanf读取单个字符时建议用字符数组去读取
-因为C++中 % s会自动把换行符或空格过滤掉 如读取M   2 3 ，用char op[2]读取，间隔多个空格也OK
-
-% c连续读取，会空格或换行
-% s会自动把换行符或空格过滤掉
-% d会自动把换行符或空格过滤掉
-
-
-读取数据:
-4
-M  2 3
-C   1 2
-M 2 4
-C 4 2
-
-#include <bits/stdc++.h>
-
-using namespace std;
-
-const int N = 30010;
-
-int m;
-int p[N], size[N], d[N];
-
-int find(int x) {
-    if (p[x] != x) {
-        int root = find(p[x]);
-        d[x] += d[p[x]];
-        p[x] = root;
-    }
-    return p[x];
-}
-
-int main() {
-    scanf("%d", &m);
-
-    for (int i = 1; i < N; i ++ ) {
-        p[i] = i;
-        size[i] = 1;
-    }
-
-    // 在用到scanf读取单个字符时，普通做法容错率很低要用getchar读取换行
-    while (m -- ) {
-        char op;
-        int a, b;
-        
-        getchar(); // 因为%d以空格或换行为结束标准，不会读取空白字符
-
-        scanf("%c%d%d", &op, &a, &b); // %c连续读取，不忽略空格或换行，%d跳过空格或换行读取
-        if (op == 'M') {
-            int pa = find(a), pb = find(b);
-            d[pa] = size[pb];
-            size[pb] += size[pa];
-            p[pa] = pb;
-        } else {
-            int pa = find(a), pb = find(b);
-            if (pa != pb) puts("-1");
-            else printf("%d\n", max(0, abs(d[a] - d[b]) - 1));
         }
+        q->next = NULL;
+
+        return res->next;
     }
-
-    return 0;
-}
-
+};

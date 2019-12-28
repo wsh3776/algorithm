@@ -1,0 +1,54 @@
+\documentclass[12pt, a4paper]{ctexart}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{harpoon}
+\usepackage{ctex}
+\usepackage{amsmath}
+\pagestyle{plain}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+
+\title{时间序列分析 作业}
+\author{10161511403, 魏森辉}
+\date{日期 2019/12/24}
+
+
+\begin{document}
+\maketitle{}
+
+\begin{flushleft}
+	\qquad 题目一： \\
+	$$y(t) = ay(t-1)+bu(t) + e(t)$$
+	$$a = 0.9,b=1$$
+	$$y(t) = 0.9y(t-1) + u(t) + e (t)$$
+	$$e(t)\,i.i.d \sim N(0,1)$$
+	\qquad 给出关于a,b估计的Cramer-Rao界\\
+	\qquad 分析$u(\cdot)$对估计下界的影响\\
+	\qquad 答：\\
+	$$\mbox{令}\quad u(t) = \frac{1}{b}[-ay(t)+y_m(t+1)]$$
+	$$y(t) = y_m(t),\forall t \textgreater 1$$
+	$$u(t) = \frac{1}{b}[-ay(t)+y_m(t+1) + k(y(t)-y_m(t))]$$
+	$$y(t+1) = y_m(t+1) + k(y(t)-y_m(t))$$
+	$$e(t+1) = ke(t)$$
+	$$E[\hat{\theta}(y^N)-\theta_0][\hat{\theta}(y^N)-\theta_0]^T \geq M^{-1}$$
+	$$M = E[\frac{d}{d\theta}logf_y(\theta;y^N)][\frac{d}{d\theta}logf_y(\theta;y^N)]^T\vert_{\theta = \theta_0}$$
+	\qquad \\
+	\bigskip
+	\bigskip
+	\bigskip
+	\qquad 题目二:  \\
+	\qquad 对于递推LS算法,设$\{\varphi_{t}\}$有界序列\\
+	\qquad 证明：$\{P_t\}$满足$\varphi_{t}^{T}P_t\varphi_t\rightarrow0$\\
+	\qquad 问:对于什么样的无界序列$\{\varphi_t\}$这个结论$\varphi_{t}^{T}P_t\varphi_t\rightarrow0$也成立？\\
+	$$P_{t+1} = P_t - a_t\varphi_t\varphi_{t}^{T}P_t$$
+	$$a_t = \frac{1}{1+\varphi_{t}^{T}P_t\varphi_t}$$
+	\qquad 答：\\
+	$$P_{t+1} = (\sum_{i = 0}^t\varphi_i\varphi_i^T+P_0^{-1})^{-1}$$
+	$$\mbox{若}\{\varphi_t\}\mbox{有界}\quad\mbox{则}\exists M \textgreater 0,\varphi\textless MP_t = (\sum_{i = 0}^{t-1}\varphi_i\varphi_i^T+P_0^{-1})^{-1} \rightarrow 0$$
+	$$\varphi_t^TP_t\varphi_t\rightarrow 0$$	
+
+
+	
+\end{flushleft}
+
+\end{document}
