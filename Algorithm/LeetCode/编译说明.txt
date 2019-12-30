@@ -14,8 +14,7 @@
         freopen("in.txt","r",stdin);
         freopen("out.txt", "w", stdout);
     #endif
-<<<<<<< HEAD
-=======
+
 
 6.sublime用终端或out都可以，vscode只用out，终端会中文乱码
 	sublime是不支持输入的，所以一定要从in.txt中读取数据
@@ -25,4 +24,3 @@
 
   所以sublime里注释掉//out,而vscodes不注释//
   不要有强迫症，不要追求完美，到头来是瞎折腾，浪费时间
->>>>>>> update9.7
