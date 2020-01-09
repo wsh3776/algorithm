@@ -4,8 +4,9 @@
  *    @Filename: 英文缩写词.cpp
  */
 
+// 这个题其实是翻转字符串的模型题，说明我当时没有理解透
 // 花了2小时，总算找出了bug
-// __we___are_of__China
+// ___PEOPLE’S_REPUBLIC___OF__CHINA
 // j每次也要更新，每次j = i，不然会TLE
 // 这道题给我的启示是：不要上来就敲代码，先把一些关键点在纸上写清楚
 
@@ -15,45 +16,34 @@
 using namespace std;
 
 int main() {
-    #ifdef ONLINE_JUDGE
-    #else
-    freopen("in.txt", "r", stdin);
-    #endif
-
-    // PEOPLE’S REPUBLIC OF CHINA
+    // ___PEOPLE’S_REPUBLIC___OF__CHINA
     string s1;
     while(getline(cin, s1)) {
-        // cout << s1 << endl;
         int n = s1.size();
 
-        // 删除开头的连续空格
-        int r = 0;
-        while(s1[r] == ' ') r ++;
-
-        for (int i = r, j = r; i < n;) {
-            // 找到第一个空格
-            while((j < n) && ((s1[j] != '-') && (s1[j] != ' '))) {
-                j++;
-            } 
-
-            string s = s1.substr(i, j - i);
-            char t = s[0];
-
-            // 判断忽略的单词
-            for (int k = 0; k < s.size(); k ++) {
-                s[k] = tolower(s[k]);
-            }
-            if (s != "of" && s != "the" && s != "a" && s != "an" && s != "of" && s != "for" && s != "and") {
-                cout << t;
-            }
-
-            //  中间连续空格时，让j到最后一个空格 判断条件最好在纸上写下
-            while(j < n && s[j] == ' ') j ++;
-            
-
-            // 重置i和j的位置 
+        for (int i = 0, j = 0; i < n;) {
+            // 去除连续空格
+            while(j < n && ((s1[j] == '-') || (s1[j] == ' '))) j ++;
+            if (j == n) break;
             i = j;
-            j = i;
+
+            // 核心
+            {
+                while(j < n && ((s1[j] != '-') && (s1[j] != ' '))) j ++;
+
+                string s = s1.substr(i, j - i);
+                char t = s[0];
+
+                // 判断忽略的单词
+                for (int k = 0; k < s.size(); k ++) {
+                    s[k] = tolower(s[k]);
+                }
+                if (s != "of" && s != "the" && s != "a" && s != "an" && s != "of" && s != "for" && s != "and") {
+                    cout << t;
+                }
+
+                i = j;
+            }
         }
         cout << endl;
     }
