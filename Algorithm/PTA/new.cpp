@@ -15,6 +15,18 @@
 using namespace std;
 
 int main() {
+    for (int i = 0; i < n; i++) {
+        int j = -1;
+        for (j = i - 1; j >= 0; j --) {
+            if (a[j] >= a[i]) continue;
+            cout << a[j] << endl;
+            break;
+        }
+
+        if (j == -1) cout << -1 << endl;
+    }
+
+    
     #ifdef ONLINE_JUDGE
     #else
     freopen("in.txt", "r", stdin);

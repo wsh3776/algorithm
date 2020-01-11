@@ -10,7 +10,6 @@ int stk[N];
 int Left[N];
 int Right[N];
 int tt;
-
 class Solution {
 public:
     int sumSubarrayMins(vector<int> &A) {
