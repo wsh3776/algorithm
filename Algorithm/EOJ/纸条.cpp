@@ -26,7 +26,7 @@ int main() {
         i ++;
     }
 
-    // c##nb sl 从高到低
+    // c##nb sl 从高到低 cslnb
     string s, tmp, res = "";
     cin >> s;
     // c##nb

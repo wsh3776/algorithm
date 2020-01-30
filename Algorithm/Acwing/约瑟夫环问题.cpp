@@ -8,8 +8,13 @@
 // f(n-1,m)的结果做个映射得到f(n,m)的结果
 class Solution {
 public:
-    int lastRemaining(int n, int m){
+    int lastRemaining(int n, int m) {
         if(n == 1) return 0;
         else return (lastRemaining(n - 1, m) + m) % n;
     }
 };
+
+int gcd(int a, int b) {
+    return b ? gcd(b, a % b) : a;
+}
+

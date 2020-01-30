@@ -14,17 +14,21 @@ int n;
 // col列，dg对角线(左上到右下)，udg反对角线
 // g[N][N]用来存路径
 
+
+
+
+
 void dfs(int u) {
     if (u == n) {
         for (int i = 1; i <= n; i ++) {
-            for (int j = 1; j <= n ;j ++) {
+            for (int j = 1; j <= n ; j ++) {
                 cout << g[i][j];
             }
             cout << endl;
         }
         cout << endl;
     }
-    
+
     // 对n个位置按行搜索
     for (int i = 1; i <= n; i ++) {
         // 剪枝(对于不满足要求的点，不能继续往下搜索)  对于dg[u + i - 1]，udg[n - u + i]，画个图就能确定表达式
@@ -41,13 +45,13 @@ void dfs(int u) {
 int main() {
     cin >> n;
     for (int i = 1; i <= n; i ++) {
-        for (int j = 1; j <= n ;j ++) {
+        for (int j = 1; j <= n ; j ++) {
             g[i][j] = '.';
         }
     }
-    
+
     dfs(0);
-    
+
     return 0;
 }
 

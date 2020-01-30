@@ -28,42 +28,34 @@ using namespace std;
 
 typedef long long ll;
 
-int main(void)
-{
-
-#ifdef ONLINE_JUDGE
-#else
+int main(void) {
+    #ifndef ONLINE_JUDGE
     freopen("in.txt", "r", stdin);
-   // freopen("out.txt", "w", stdout);
-#endif
+    #endif
 
-    cout << ceil(1.3) << endl;
+    
+
+
     int T;
     cin >> T;
-    for (int cnt = 0; cnt < T; cnt ++)
-    {
+    for (int cnt = 0; cnt < T; cnt ++) {
         string s1, s2, s;
         cin >> s1 >> s2 >> s;
 
-        if (s.find(s1) == string::npos || s.find(s2) == string::npos)
-        {
+        if (s.find(s1) == string::npos || s.find(s2) == string::npos) {
             cout << "case #" << cnt << ":" << endl;
             cout << 0 << endl;
-        }
-        else
-        {
+        } else {
             int res = 0;
             int a1 = s.find(s1), a2 = s.rfind(s1);
             int b1 = s.find(s2), b2 = s.rfind(s2);
 
             int s1tos2 = abs(a1 - b2) - (int)s1.size();
-            if (s1tos2 < 0)
-            {
+            if (s1tos2 < 0) {
                 s1tos2 = 0;
             }
             int s2tos1 = abs(a2 - b1) - (int)s2.size();
-            if (s2tos1 < 0)
-            {
+            if (s2tos1 < 0) {
                 s2tos1 = 0;
             }
 

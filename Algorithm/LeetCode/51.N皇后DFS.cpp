@@ -3,7 +3,7 @@ public:
     static const int N = 30;
     char g[N][N];
     bool col[N], dg[N], udg[N];
-   
+
     vector<vector<string>> ans;
 
     void dfs(int u, int n) {

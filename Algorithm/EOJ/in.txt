@@ -1,4 +1,16 @@
-15 30 20 3
-000046SZJBB8888
-030950LJSAA9999
-201509RBJC7777D
+3
+ab
+bd
+bdabbdcdabdababcccbd
+a
+a
+aaa
+a11
+a21
+a11xa21xa11xa21xa21xa11
+case #0:
+14
+case #1:
+1
+case #2:
+13

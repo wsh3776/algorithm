@@ -25,7 +25,7 @@ public:
 
         while(q.size()) {
             int len = q.size();
-            double mn = DBL_MAX, mx = 0; // DBL_MAX是double的最大值 大约10^308次
+            double minv = DBL_MAX, maxv = 0; // DBL_MAX是double的最大值 大约10^308次
 
             // 对于每一层找到左边界和右边界
             for (int i = 1; i <= len; i ++) {
@@ -33,17 +33,17 @@ public:
                 q.pop();
                 if (t.a->left) {
                     q.push({t.a->left, 2 * t.b});
-                    mn = min(mn, 2 * t.b);
-                    mx = max(mx, 2 * t.b);
+                    minv = min(minv, 2 * t.b);
+                    maxv = max(maxv, 2 * t.b);
                 }
                 if (t.a->right) {
                     q.push({t.a->right, 2 * t.b + 1});
-                    mn = min(mn, 2 * t.b + 1);
-                    mx = max(mx, 2 * t.b + 1);
+                    minv = min(minv, 2 * t.b + 1);
+                    maxv = max(maxv, 2 * t.b + 1);
                 }
             }
 
-            res = max(res, (double)((int)(mx - mn) + 1));
+            res = max(res, (double)((int)(maxv - minv) + 1));
         }
 
         return (int)res;
