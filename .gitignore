@@ -1,5 +1,3 @@
-# 在mac根目录下的.gitignore_global设置了.DS_Store其实没用，因为我局部已经定义了.DS_Store的规则
-
 # Ignore all
 *
 
@@ -16,13 +14,12 @@
 !*.jpg
 !*.html
 !*.docx
-
 !*.tex
 
 # Unigore all dirs
-# !*/
+!*/
 
-# Unignore specific dirs 
-!/Algorithm/
-!/Algorithm/**/
+# Unignore specific dirs  
+# !/program/
+# !/program/**/
 
