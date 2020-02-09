@@ -1,5 +1,3 @@
-本仓库不定期更新Codeforces、LeetCode等平台的算法编程题代码
-
 算法编程题的详细题解请看我的个人博客 [传送门](https://blog.csdn.net/qq_43827595)
 
 算法是解决问题的思路、步骤和具体方法，每解出一个题，每看见一次<font color=green size=3 face=STHeiti>Accepted</font>的喜悦，是别人无法体会的
@@ -9,10 +7,30 @@
 
 
 ### 示例：LeetCode239.滑动窗口的最大值
-[原题链接](https://leetcode-cn.com/problems/sliding-window-maximum/)
+[原题链接](https://leetcode.com/problems/sliding-window-maximum/)
 
-**题目描述**
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200209101537738.png)
+#### 题目描述
+Given an array nums, there is a sliding window of size k which is moving from the very left of the array to the very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position. Return the max sliding window.
+
+**Example:**
+
+Input: $nums = [1,3,-1,-3,5,3,6,7]$, and $k = 3$
+Output: $[3,3,5,5,6,7]$
+
+Explanation: 
+```
+Window position                Max
+[1  3  -1] -3  5  3  6  7       3
+ 1 [3  -1  -3] 5  3  6  7       3
+ 1  3 [-1  -3  5] 3  6  7       5
+ 1  3  -1 [-3  5  3] 6  7       5
+ 1  3  -1  -3 [5  3  6] 7       6
+ 1  3  -1  -3  5 [3  6  7]      7
+```
+Note:
+You may assume k is always valid, 1 ≤ k ≤ input array's size for non-empty array.
+
+
 
 
 **算法分析：**
