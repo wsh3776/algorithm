@@ -8,7 +8,7 @@
 ---
 
 
-###示例：LeetCode239.滑动窗口的最大值
+### 示例：LeetCode239.滑动窗口的最大值
 [原题链接](https://leetcode-cn.com/problems/sliding-window-maximum/)
 
 **题目描述**
