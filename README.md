@@ -3,9 +3,6 @@
 算法是解决问题的思路、步骤和具体方法，每解出一个题，每看见一次<font color=green size=3 face=STHeiti>Accepted</font>的喜悦，是别人无法体会的
 
 
----
-
-
 ### 示例：LeetCode239.滑动窗口的最大值
 [原题链接](https://leetcode.com/problems/sliding-window-maximum/)
 
@@ -14,8 +11,8 @@ Given an array nums, there is a sliding window of size k which is moving from th
 
 **Example:**
 
-Input: $nums = [1,3,-1,-3,5,3,6,7]$, and $k = 3$
-Output: $[3,3,5,5,6,7]$
+Input: nums = [1,3,-1,-3,5,3,6,7], and k = 3
+Output: [3,3,5,5,6,7]
 
 Explanation: 
 ```
