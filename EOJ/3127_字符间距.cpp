@@ -33,7 +33,6 @@ int main(void) {
     freopen("in.txt", "r", stdin);
     #endif
 
-    
 
 
     int T;
