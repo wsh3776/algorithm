@@ -16,7 +16,7 @@ int main() {
         int x;
         cin >> x;
         heap.push(x);
-	}
+    }
     
     int res = 0;
     while(heap.size() > 1) {
