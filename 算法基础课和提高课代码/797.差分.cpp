@@ -21,7 +21,7 @@ int main() {
         insert(i, i, a[i]);
     }
 
-    while (m --) {
+    while (m --) { 
         int l, r, c;
         cin >> l >> r >> c;
         insert(l, r, c);

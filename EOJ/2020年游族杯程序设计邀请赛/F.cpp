@@ -1,4 +1,6 @@
-// 这里有两个文件后缀为.eoj，这点没想到，存到 map 里要把整个路径存进去
+// 思路：其实应该可以用前缀树去做，不过我这里用的是 map 去存，然后判断 file 在不在 dirs 中
+// 坑点：目录名和文件名可以相同
+// 样例：
 // 2
 // /cuber.eoj/qq.eoj
 // /cuber.eoj/cuber.eoj
@@ -13,32 +15,24 @@ typedef long long LL;
 unordered_map<string, LL> dirs, files;
 
 int main() {
-#ifndef ONLINE_JUDGE
-    freopen("in.txt", "r", stdin);
-#endif
-
     LL n;
     cin >> n;
     string s;
 
     for (LL k = 1; k <= n; k++) {
         cin >> s;
-        // cout << s << endl;
+
         LL sn = s.size();
-        // cout << sn << endl;
         for (LL i = 1, j = 1; i < sn; i++) {
-            // cout << "dsf " << endl;
-            while (j < sn && s[j] != '/')
+            while (j < sn && s[j] != '/') // 双指针思想
                 j++;
-            // cout << j << endl;
             string tmp = s.substr(i, j - i);
             LL t = tmp.size();
 
-            // cout << tmp << endl;
+            // 把完整路径存到 map 中
             if (j == sn) {
-                if (t > 4 && tmp.substr(t - 4, 4) == ".eoj") {
+                if (t > 4 && tmp.substr(t - 4, 4) == ".eoj") { // 后四位是否为 .eoj
                     files[s.substr(0, j)]++;
-                    // cout << "here: " << tmp << endl;
                 }
             } else {
                 if (t > 4 && tmp.substr(t - 4, 4) == ".eoj") {
@@ -51,10 +45,10 @@ int main() {
         }
     }
 
+    // 看是否有前缀（好像有点像前缀树）
     LL res = 0;
     for (auto file : files) {
         if (!dirs.count(file.first)) {
-            // cout << file.first << endl;
             res += file.second;
         }
     }
