@@ -4,6 +4,7 @@
 
 using namespace std;
 
+
 const int N = 2e4 + 7;
 
 int f[N][N];
@@ -13,7 +14,9 @@ int main () {
     int m, n;
     cin >> m >> n;
 
+ 
     for (int i = 1; i <= n; i ++) {
+        int d;
         int d;
         cin >> d;
         v[i] = d, w[i] = d;
