@@ -21,7 +21,6 @@ void getString(int i, int j, int len) { // len表示最大公共子序列的长�
             } else j --;
         }
     }
-    
     reverse(s.begin(), s.end());
     cout << s << endl;
     
@@ -30,6 +29,7 @@ void getString(int i, int j, int len) { // len表示最大公共子序列的长�
 int main() {
     cin >> a >> b;
     n = a.size(), m = b.size();
+
     // "f[i][j]"表示所有A[1,...,i]与B[1,...,j]的公共子序列的集合，属性：最大值
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= m; j++) {
@@ -41,7 +41,9 @@ int main() {
         }
     }
 
+
     int len = f[n][m]; // 最长公共子序列的长度
+
     if (len == 0) cout << -1 << endl;
     else getString(n, m, f[n][m]);
 
