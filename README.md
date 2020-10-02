@@ -1,5 +1,6 @@
 算法编程题的详细题解请看我的个人博客 [传送门](https://blog.csdn.net/qq_43827595)
 
+
 算法是解决问题的思路、步骤和具体方法，每解出一个题，每看见一次<font color=green size=3 face=STHeiti>Accepted</font>的喜悦，是别人无法体会的
 
 
